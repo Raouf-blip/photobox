@@ -2,3 +2,7 @@ img {
     max-width: 30rem;
     height: auto;
 }
+
+#lightbox { display: none; }
+#lightbox.active { display: flex; }
+    

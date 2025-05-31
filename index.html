@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Photobox</title>
+  <link rel="stylesheet" href="css/index.css">
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
   <script type="module" src="./js/index.js"></script>
-  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <main>
@@ -14,13 +14,14 @@
 
   <button id="load-gallery">Charger galerie</button>
   <div id="gallery-controls">
-    <button id="gallery-first">« Première</button>
-    <button id="gallery-prev">‹ Précédente</button>
-    <button id="gallery-next">Suivante ›</button>
-    <button id="gallery-last">Dernière »</button>
+    <button id="gallery-first">Première</button>
+    <button id="gallery-prev">Précédente</button>
+    <button id="gallery-next">Suivante</button>
+    <button id="gallery-last">Dernière</button>
   </div>
   <section id="gallery-container"></section>
 </main>
+
 <script id="photo-template" type="text/x-handlebars-template">
   <div class="photo-box">
     <img src="{{url}}" alt="{{titre}}">
@@ -32,5 +33,15 @@
     <ul id="les_commentaires"></ul>
   </div>
 </script>
+
+<div id="lightbox" style="display:none;">
+  <div id="lightbox-content"></div>
+  <div class="lightbox-buttons">
+    <button id="close-lightbox" title="Fermer">✕</button>
+    <button id="prev-lightbox" title="Photo précédente">⟨</button>
+    <button id="next-lightbox" title="Photo suivante">⟩</button>
+  </div>
+</div>
+
 </body>
 </html>

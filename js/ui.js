@@ -15,14 +15,20 @@ export function displayPicture(obj) {
   });
 }
 
-export function displayCategory(cat) {
-  document.getElementById("la_categorie").textContent = "Catégorie : " + (cat.nom || cat);
+export function displayCategory(catObj) {
+  let catName =
+    (catObj.categorie && catObj.categorie.nom)
+    || (catObj.nom)
+    || (typeof catObj === "string" ? catObj : "");
+  document.getElementById("la_categorie").textContent = "Catégorie : " + catName;
 }
 
-export function displayComments(coms) {
+
+export function displayComments(commentsObj) {
   const ul = document.getElementById("les_commentaires");
   ul.innerHTML = "";
-  (Array.isArray(coms) ? coms : coms.comments || []).forEach(c =>
-    ul.innerHTML += `<li>${c.pseudo} : ${c.contenu}</li>`
+  (Array.isArray(commentsObj.comments) ? commentsObj.comments : []).forEach(c =>
+    ul.innerHTML += `<li>${c.pseudo} : ${c.content}</li>`
   );
 }
+
